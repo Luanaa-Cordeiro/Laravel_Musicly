@@ -1,0 +1,1852 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fff9f9;
+    min-width: 0;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #575252;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 15px 20px;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: 10px 20px;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i,
+.dropdown-item i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link.active{
+    background-color:  rgba(255, 255, 255, .075);
+    border-left: 3px solid #66276A;
+    
+}
+
+a.sidebar-link:hover:not(.active) {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #66276A;
+}
+
+
+
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #575252;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.navbar {
+    background-image: linear-gradient( to right, #775584, #66276A);
+    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
+    height: 70px;
+}
+
+.navbar-expand .navbar-collapse {
+    min-width: 200px;
+}
+
+.avatar {
+    height: 30px;
+    width: 50px;
+}
+
+.footer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient( to right, #775584, #66276A);
+    height: 60px;
+    
+}
+
+.footer li{
+    margin-top: 20px;
+    color: white;
+    text-align: end;
+   
+}
+
+.footer_item{
+    color: white;
+   margin: 15px 10px;
+}
+
+.footer_item.active{
+    color:  #929292; 
+}
+
+.footer_item:hover:not(.active) {
+    color:  #858585; 
+}
+
+.nav-item span:hover{
+    color:  #b3b0b0; 
+}
+
+
+
+/*Inicio*/
+#sair{
+    color: white;
+    background-color:   #575252;
+    width: 160px;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+}
+
+.sair_menu{
+    background-color: #575252;
+}
+
+.sair_menu i{
+    color: white;
+    margin-left: 10px;
+}
+
+.card{
+    margin: 0 35px;
+    height: 450px;
+    width: 300px;
+    
+}
+
+.card img{
+    height: 250px;
+}
+
+.cartas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio{
+    margin-top: 100px;
+}
+
+.inicio h1{
+    margin-bottom: 50px;
+    font-size: 55px;
+    text-align: center;
+}
+/*Inicio*/
+
+
+/*Adicionar*/
+#cadastrar{
+    width: 700px;
+    height: 700px;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    border: none;
+}
+
+#cadastrar_art{
+    width: 550px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    border: none;
+}
+
+#cadastrar_gen{
+    width: 550px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    border: none;
+}
+
+#cadastrar_alb{
+    width: 650px;
+    height: 550px;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    border: none; 
+}
+
+#cadastrar_mus{
+    width:850px;
+    height: 770px;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    border: none; 
+}
+
+.botao{
+    background-color: #66276A;
+    color: aliceblue;
+}
+
+.botao:hover{
+    background-color: #442163;
+    color: white;
+}
+
+#formulario_art{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+#formulario_gen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+#formulario_alb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 125px;
+}
+
+#formulario_mus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+#input_art{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+#input_gen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+}
+
+    
+.input_art label{
+    margin-left: 60px;
+}
+
+.input_gen label{
+    margin-left: 60px;
+}
+
+#input_art input{
+    width: 400px;
+    margin-bottom: 10px;
+    border: solid #775584 1px;
+}
+
+#input_gen input{
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+#input_gen input{
+    width: 400px;
+    margin-bottom: 10px;
+    border: solid #775584 1px;
+}
+
+#inputs_alb{
+    margin: 0 30px;
+}
+
+#inputs_alb input{
+    border: solid #775584 1px;
+}
+
+#inputs_mus{
+    margin: 0 50px;
+}
+
+#inputs_mus input{
+    border: solid #775584 1px;
+}
+
+.asterisco{
+    color: rgb(180, 5, 5);
+    margin-left: 8px;
+}
+
+.mais{
+    margin-left: 600px;
+    color: black;
+}
+
+#botao{
+    background-color: #775584; 
+    border-radius: 15px;  
+    color: white;
+    margin-top: 0px;
+    width: 400px;
+}
+
+#botao_alb{
+    width: 560px; 
+    background-color: #775584; 
+    border-radius: 15px;  
+    color: white;
+    margin-top: 15px;
+}
+
+#botao_mus{
+    width: 700px; 
+    background-color: #775584; 
+    border-radius: 15px;  
+    color: white;
+    margin-top: 15px;
+}
+
+#botao_modal{
+    background-color: #775584;
+    color: white;
+    border: none;
+}
+
+#botao_modal:hover{
+    background-color: #3c173f;
+}
+
+
+.div_botao{
+    display: flex;
+    justify-content: center;
+}
+
+#voltar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#voltar a{
+    color: #66276A;
+}
+
+#voltar a:hover{
+    color: #442163;
+}
+
+#botao:hover{
+    background-color: #66276A;
+}
+
+#botao_mus:hover{
+    background-color: #66276A;
+}
+
+#botao_alb:hover{
+    background-color: #66276A;
+}
+
+#titulo_form{
+    text-align: center;
+    font-size: 30px;
+    font: 500;
+    margin-bottom: 5px;
+    margin-top: 35px;
+}
+/*Adicionar*/
+
+
+/*Elementos Tabelas*/
+.deletar{
+    background-color: rgb(161, 2, 2);
+    color: white;
+    margin: 0 40px;
+}
+
+.atualizar{
+    background-color: rgb(3, 71, 3);
+    color: white;
+}
+
+.deletar:hover{
+    background-color: rgb(117, 2, 2);
+    color: white;
+}
+
+.atualizar:hover{
+    background-color: rgb(1, 46, 1);
+    color: white;
+}
+
+#botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: end; 
+}
+
+#ação{
+    background-color:#66276A; 
+    color:white; 
+    text-align:end;
+    padding-right: 100px;
+}
+
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.adicionar{
+    background-color: #66276A;
+    color: white;
+    padding: 10px 20px;
+}
+
+.adicionar a{
+    text-decoration: none;
+    color: white;
+}
+
+.adicionar:hover{
+    background-color: #3c173f;
+    color: white;
+}
+
+
+
+
+.tabela{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.table-wrapper {
+    max-height: 500px; 
+    overflow-y: auto; 
+}
+
+.tabela h1{
+    font-size: 55px;
+    font-weight: 600;
+}
+
+
+
+/*Sem elementos na tabela*/
+.main_vazio{
+    width: 2000px;
+}
+
+.botao_vazio{
+    background-color: #66276A;
+    color: white;
+    padding: 0px 0px;
+    height: 52px;
+    width: 140px;
+    margin-top: 15px;
+}
+
+.botao_vazio a{
+    text-decoration: none;
+    color: white;
+}
+
+.botao_vazio:hover{
+    background-color: #3c173f;
+    color: white;
+}
+
+.elementos_vazios{
+    display: flex;
+    justify-content: space-between;
+}
+
+.elementos_vazios h1{
+    margin-bottom: 30px;
+}
+
+/*Elementos Tabelas*/
+
+
+
+
+#nome{
+    width: 320px;
+}
+
+.formulario a{
+    color: #66276A;
+    font-weight: 500;
+}
+
+
+.titulo_botao{
+    display: flex;
+    justify-content: space-between;
+    width: 1300px;
+    margin-bottom: 40px;
+}
+
+
+#form_atualizar{
+display: flex;
+justify-content: end;
+
+}
+
+#form_deletar{
+    display: flex;
+    justify-content: start;   
+}
+
+.artista_select{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.genero_input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.album_input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+select{
+    border: solid #775584 1px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+/*Footer paginas*/
+.contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 700px;
+}
+
+.texto h1{
+    font-size: 70px;
+}
+
+.texto span{
+    font-size: 40px;
+}
+
+.botao_contato{
+    background-color: #775584;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    height: 50px;
+    padding-top: 10px;
+}
+
+.botao_contato:hover{
+    background-color: #3c173f;
+}
+
+.contato_sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.texto_sobre{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 1000px;
+}
+
+.texto_sobre h1{
+    font-size: 50px;
+}
+
+.texto_sobre span{
+    font-size: 25px;
+}
+
+.texto_sobre b{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.botao_sobre{
+    background-color: #775584;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    height: 50px;
+    padding-top: 14px;
+    text-align: center;
+}
+
+.botao_sobre:hover{
+    background-color: #3c173f;
+}
+
+.contato_termos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.texto_termos{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    width: 800px;
+}
+
+.texto_termos h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.texto_termos span{
+    font-size: 25px;
+}
+
+.botao_termos{
+    background-color: #775584;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    height: 50px;
+    padding-top: 14px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.botao_termos:hover{
+    background-color: #3c173f;
+}
+/*Footer paginas*/
+
+#preencher{
+    margin-bottom: 0;
+}
+
+
+/*Gráfico*/
+.main_grafico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_grafico h1{
+   margin-bottom: 25px;
+   margin-top: 200PX;
+}
+
+.main_grafico button{
+    margin-top: 25px;
+    background-color: #775584;
+    color: white;
+    padding: 10px 180px;
+    border-radius: 15px;
+    border: none;
+ }
+
+.main_grafico button:hover{
+    background-color: #3c173f;
+    color: white;
+}
+
+/*Gráfico*/
+
+@media only screen and (max-width: 1005px){
+    #botoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+    
+    #botoes button{
+        margin: 5px 0;
+    } 
+    
+}
+
+@media only screen and (max-width: 1350px){
+    .texto_sobre{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 600px;
+    }
+    
+    .texto_sobre h1{
+        font-size: 40px;
+    }
+
+    .texto_sobre span{
+        font-size: 20px;
+    }
+
+    .texto_termos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        width: 700px;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 950px){
+
+    #botoes{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    #botoes button{
+        margin: 5px 0;
+    }
+
+    #cadastrar_mus{
+        width:650px;
+        height: 770px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    #formulario_mus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .texto{
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+        width: 500px;
+    }
+
+    .texto h1{
+        font-size: 60px;
+    }
+    
+    .texto span{
+        font-size: 25px;
+    }
+
+    .texto_sobre{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 400px;
+    }
+    
+    .texto_sobre h1{
+        font-size: 40px;
+    }
+
+    .texto_sobre span{
+        font-size: 20px;
+    }
+
+    .texto_termos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        width: 550px;
+    }
+
+    .texto_termos h1{
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+    
+    .texto_termos span{
+        font-size: 20px;
+    }
+
+    .botao_contato{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 50px;
+        height: 40px;
+        padding-top: 5px;
+    }
+
+    .botao_termos{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 50px;
+        height: 40px;
+        padding-top: 5px;
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 765px){
+    #cadastrar_art{
+        width: 300px;
+        height: 450px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none;
+    } 
+
+    #cadastrar_gen{
+        width: 300px;
+        height: 450px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none;
+    }
+
+    #cadastrar_alb{
+        width: 450px;
+        height: 700px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    #cadastrar_mus{
+        width:450px;
+        height: 920px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    
+    #formulario_art{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+     #formulario_gen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #formulario_alb{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #formulario_mus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    
+    #input_art{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        }
+
+    #input_gen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+    #input_art input{
+        width: 250px;
+    }
+
+    #input_gen input{
+        width: 250px;
+    }
+    
+        
+    .input_art label{
+        margin-left: 12px;
+    }
+
+    .input_gen label{
+        margin-left: 12px;
+    }
+
+    
+    .botao{
+        background-color: #66276A;
+        color: aliceblue;
+    }
+    
+    .botao:hover{
+        background-color: #442163;
+        color: white;
+    }
+
+
+    #botao{
+        background-color: #775584; 
+        border-radius: 20px; 
+        width: 250px; 
+        color: white;
+        margin-top: 0px;
+    }
+    
+    .div_botao{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #botao:hover{
+        background-color: #66276A;
+    }
+    
+    #titulo_form{
+        text-align: center;
+        font-size: 25px;
+        font: 600;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .tabela{
+        margin-top: 40px;
+        margin-left: 30px;
+        margin-right: 0px;
+    }
+
+    .adicionar{
+        background-color: #66276A;
+        color: white;
+        padding: 10px 0px;
+    }
+    
+    .adicionar a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 20px;
+    }
+
+    .titulo h1{
+        font-size: 55px;
+    }
+
+    .adicionar{
+        background-color: #66276A;
+        color: white;
+        padding: 10px 0px;
+        width: 120px;
+        margin: 10px 0;
+    }
+
+    .table-wrapper {
+        max-height: 460px; 
+        overflow-y: auto; 
+    }
+
+    .main_vazio{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vazio{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .botao_vazio{
+        background-color: #66276A;
+        color: white;
+        padding: 0px 0px;
+        height: 50px;
+        width: 120px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .botao_vazio a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .botao_vazio:hover{
+        background-color: #3c173f;
+        color: white;
+    }
+    
+    .elementos_vazios{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    
+    .elementos_vazios h1{
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+
+    .footer_item{
+        color: white;
+       margin: 15px 10px;
+       font-size: 15px;
+    }
+
+
+    .texto{
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+        width: 400px;
+    }
+
+    .texto h1{
+        font-size: 50px;
+    }
+
+    .texto span{
+        font-size: 25px;
+    }
+
+    .botao_contato{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 25px;
+        height: 40px;
+        padding-top: 5px;
+    }
+
+    .texto_sobre h1{
+        font-size: 50px;
+    }
+
+    .texto_sobre{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 300px;
+    }
+    
+    .texto_sobre h1{
+        font-size: 30px;
+    }
+
+    .texto_sobre span{
+        font-size: 15px;
+    }
+
+    .texto_sobre b{
+        font-size: 15px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .texto_termos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+        width: 300px;
+    }
+
+    .texto_termos h1{
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    
+    .texto_termos span{
+        font-size: 20px;
+    }
+
+    .botao_sobre{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 30px;
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    #cadastrar_mus{
+        width:350px;
+        height: 870px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    #formulario_mus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+    }
+    
+    #inputs_mus{
+        margin: 0 5px;
+    }  
+
+    #alerta{
+        font-size: 12px;
+    }
+
+    #titulo_form{
+        text-align: center;
+        font-size: 20px;
+        font: 600;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .texto{
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+        width: 200px;
+    }
+
+    .texto h1{
+        font-size: 40px;
+    }
+
+    .texto span{
+        font-size: 12px;
+    }
+
+    .texto_sobre h1{
+        font-size: 50px;
+    }
+
+    .texto_sobre{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 200px;
+    }
+    
+    .texto_sobre h1{
+        font-size: 30px;
+    }
+
+    .texto_sobre span{
+        font-size: 18px;
+    }
+
+    .texto_sobre b{
+        font-size: 15px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .botao_contato{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 20px;
+        height: 30px;
+        padding-top: 5px;
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 450px) {
+    #cadastrar_art{
+        width: 250px;
+        height: 400px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none;
+    }
+
+    #cadastrar_gen{
+        width: 250px;
+        height: 400px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none;
+    }
+
+    #cadastrar_alb{
+        width: 250px;
+        height: 650px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    #cadastrar_mus{
+        width:250px;
+        height: 820px;
+        border-radius: 20px;
+        background-color: rgb(255, 251, 251);
+        border: none; 
+    }
+
+    
+    .botao{
+        background-color: #66276A;
+        color: aliceblue;
+    }
+    
+    .botao:hover{
+        background-color: #442163;
+        color: white;
+    }
+    
+
+    #formulario_art{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 70px;
+    }
+
+    #formulario_gen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 70px;
+    }
+
+    #formulario_alb{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 75px;
+    }
+
+    #formulario_mus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-left: 75px;
+}
+
+    #input_art{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        }
+
+    #input_gen{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+    .input_gen label{
+        margin-left: 10px;
+        font-size: 16px;
+    }
+
+    #input_gen input{
+        width: 200px;
+        height: 40px;
+        margin-bottom: 0px;
+    }
+    
+        
+    .input_art label{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+
+    #input_art input{
+        width: 200px;
+        height: 40px;
+        margin-bottom: 0px;
+    }
+
+    #inputs_alb{
+        margin: 0 5px;
+    }
+
+    #inputs_alb input{
+        border: solid #775584 1px;
+        height: 40px;
+    }
+
+    #inputs_alb select{
+        border: solid #775584 1px;
+        height: 45px;
+    }
+
+    #inputs_alb label{
+        font-size: 15px;
+    }
+
+    .artista_select label{
+    font-size: 15px;
+    }
+
+    #inputs_mus{
+        margin: 0 5px;
+    }
+
+    #inputs_mus input{
+        border: solid #775584 1px;
+        height: 40px;
+    }
+
+    #inputs_mus select{
+        border: solid #775584 1px;
+        height: 45px;
+    }
+
+    #inputs_mus label{
+        font-size: 15px;
+    }
+
+    
+    #alerta{
+        font-size: 15px;
+    }
+    
+    /*.alerta{
+        font-size: 14px;
+    }*/
+    
+    #botao{
+        background-color: #775584; 
+        border-radius: 20px; 
+        width: 200px; 
+        height: 40px;
+        color: white;
+        margin-top: 0px;
+        font-size: 15px;
+    }
+
+    #botao_alb{
+        background-color: #775584; 
+        border-radius: 20px; 
+        width: 200px; 
+        height: 40px;
+        color: white;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    #botao_mus{
+        background-color: #775584; 
+        border-radius: 20px; 
+        width: 200px; 
+        height: 40px;
+        color: white;
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    #botao:hover{
+        background-color: #66276A;
+    }
+    
+    .div_botao{
+        display: flex;
+        justify-content: center;
+    }
+
+    .parsley-required{
+        text-align: left;
+        font-size: 12px;
+    }
+    
+    #botao:hover{
+        background-color: #66276A;
+    }
+    
+    #titulo_form{
+        text-align: center;
+        font-size: 20px;
+        font: 600;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    #voltar a{
+        font-size: 16px;
+    }
+
+    .tabela{
+        margin-top: 40px;
+        margin-left: 100px;
+        margin-right: 0px;
+    }
+
+    .adicionar{
+        background-color: #66276A;
+        color: white;
+        padding: 10px 20px;
+    }
+    
+    .adicionar a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 20px;
+    }
+
+    .titulo h1{
+        font-size: 35px;
+    }
+
+    .adicionar{
+        background-color: #66276A;
+        color: white;
+        padding: 8px 0px;
+        width: 120px;
+        margin: 10px 0;
+    }
+
+    .card{
+        margin: 20px 35px;
+        height: 460px;
+        width: 250px;
+        
+    }
+    
+    .card img{
+        height: 220px;
+    }
+    
+    .inicio{
+        margin-top: 50px;
+        margin-left: 80px;
+    }
+    
+    .inicio h1{
+        margin-bottom: 20px;
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .table-wrapper {
+        max-height: 200px; 
+        overflow-y: auto; 
+    }
+
+    #sidebar {
+        width: 70px;
+        min-width: 70px;
+        z-index: 1000;
+        transition: all .25s ease-in-out;
+        background-color: #575252;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+
+    .main_vazio{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vazio{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .botao_vazio{
+        background-color: #66276A;
+        color: white;
+        padding: 0px 0px;
+        height: 45px;
+        width: 120px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .botao_vazio a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .botao_vazio:hover{
+        background-color: #3c173f;
+        color: white;
+    }
+    
+    .elementos_vazios{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    
+    .elementos_vazios h1{
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+
+    ::placeholder {
+        font-size: 16px;
+      }
+
+
+    #preencher{
+        margin-bottom: 0;
+        font-size: 15px;
+    }
+
+    .footer_item{
+        color: white;
+       margin: 20px 5px;
+       font-size: 10px;
+    }
+
+    .texto{
+        display: flex;
+        flex-direction: column;
+        margin-top: 120px;
+        margin-left: 70px;
+        width: 200px;
+    }
+
+
+
+    .texto h1{
+        font-size: 40px;
+    }
+
+    .texto span{
+        font-size: 12px;
+    }
+
+    .botao_contato{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 20px;
+        height: 30px;
+        padding-top: 5px;
+        font-size: 15px;
+    }
+
+    .texto_sobre h1{
+        font-size: 50px;
+    }
+
+    .texto_sobre{
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        width: 200px;
+        margin-left: 70px;
+    }
+    
+    .texto_sobre h1{
+        font-size: 30px;
+    }
+
+    .texto_sobre span{
+        font-size: 15px;
+    }
+
+    .texto_sobre b{
+        font-size: 15px;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .botao_sobre{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 20px;
+        height: 30px;
+        padding-top: 5px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .texto_termos{
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        width: 200px;
+        margin-left: 60px;
+    }
+
+    .texto_termos h1{
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    
+    .texto_termos span{
+        font-size: 15px;
+    }
+
+    .botao_termos{
+        background-color: #775584;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        margin-top: 50px;
+        height: 30px;
+        padding-top: 5px;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .main_grafico h1{
+   margin-bottom: 25px;
+   margin-top: 50PX;
+   margin-left: 75px;
+   font-size: 20px;
+}
+
+.main_grafico button{
+    margin-top: 25px;
+    background-color: #775584;
+    color: white;
+    padding: 8px 100px;
+    border-radius: 15px;
+    border: none;
+    margin-left: 80px;
+ }
+
+ .botoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: end; 
+}
+
+.botoes button{
+    margin: 5px 0;
+}
+
+#ação{
+    background-color:#66276A; 
+    color:white; 
+    text-align:end;
+    padding-right: 50px;
+}
+    
+}
+
+
