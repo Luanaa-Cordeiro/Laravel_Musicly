@@ -67,33 +67,22 @@
                 </div>
             </nav>
 
-@if(session()->has('message'))
-    <div class="alerta alert-success alert alert-dismissible">
-        {{ session()->get('message') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-@endif
-
-
-
-<div class="main_editar">
-<div class="formulario_editar">
-<form action="{{ route('artistas.update', ['artista' => $artistas->id])}}" method='post'>
+<div class="main">
+<div class="formulario">
+<form action="{{ route('generos.store')}}" method="post">
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input type="text" name="nome" value="{{$artistas->nome}}">
-    <input type="hidden" name="_method" value="PUT">
+    <label class="form-label" for="nome_artista" style="color:white;">Nome do Gênero<span class="asterisco">*</span></label>
+    <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" required />
   </div>
 
-  <div id="botao_editar">
-  <button data-mdb-ripple-init type="submit" id="editar" class="btn btn-block">Editar</button>
-  <a href="{{ route('artistas.index')}}">Voltar</a>
+<div id="botao_criar">
+  <button data-mdb-ripple-init type="submit" id="criar" class="btn btn-block">Criar</button>
+  <a href="{{ route('generos.index')}}">Voltar</a>
 </div>
 </form>
 </div>
 </div>
-
 
             
         </div>

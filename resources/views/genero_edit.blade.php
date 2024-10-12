@@ -78,17 +78,17 @@
 
 <div class="main_editar">
 <div class="formulario_editar">
-<form action="{{ route('artistas.update', ['artista' => $artistas->id])}}" method='post'>
+<form action="{{ route('generos.update', ['genero' => $generos->id])}}" method='post'>
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input type="text" name="nome" value="{{$artistas->nome}}">
+    <input type="text" name="nome" value="{{$generos->nome}}">
     <input type="hidden" name="_method" value="PUT">
   </div>
 
   <div id="botao_editar">
   <button data-mdb-ripple-init type="submit" id="editar" class="btn btn-block">Editar</button>
-  <a href="{{ route('artistas.index')}}">Voltar</a>
+  <a href="{{ route('generos.index')}}">Voltar</a>
 </div>
 </form>
 </div>
