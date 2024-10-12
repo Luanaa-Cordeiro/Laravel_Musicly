@@ -38,12 +38,12 @@ class ArtistaController extends Controller
          ]);
  
          if($created){
-             return redirect()->back()->with('message','Criado com sucesso');
+            return redirect()->route('artistas.index')->with('message', 'Artista "' . $created->nome  . '" criado com sucesso');
          }
  
-         return redirect()->back()->with('message','Erro ao criar');
+         return redirect()->route('artistas.index')->with('message','Erro ao criar');
     }
-
+    
     /**
      * Display the specified resource.
      */
@@ -68,10 +68,10 @@ class ArtistaController extends Controller
         $updated = $this->artista->where('id', $id)->update($request->except(['_token','_method']));
 
         if($updated){
-            return redirect()->back()->with('message','Atualizado com sucesso');
+            return redirect()->route('artistas.index')->with('message','Atualizado com sucesso');
         }
 
-        return redirect()->back()->with('message','Erro ao atualizar');
+        return redirect()->route('artistas.index')->with('message','Erro ao atualizar');
     }
 
     /**
