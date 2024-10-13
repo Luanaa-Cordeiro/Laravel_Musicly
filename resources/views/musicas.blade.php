@@ -75,7 +75,7 @@
 @endif
 
 <div class='adicionar'>
-    <h2>Artistas</h2>
+    <h2>Músicas</h2>
     <a href="{{route('musicas.create')}}"><button>Adicionar</button></a>
 </div>
 

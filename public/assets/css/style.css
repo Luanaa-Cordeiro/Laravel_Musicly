@@ -106,6 +106,13 @@ margin-left: 10px;
     
 }
 
+select{
+    border: solid #6d7fcc 1px;
+    border-radius: 10px;
+    padding: 6px 20px;
+    margin-top: 10px;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */

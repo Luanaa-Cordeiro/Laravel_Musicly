@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Artista;
+use App\Models\Genero;
+use App\Models\Album;
+use App\Models\Musica;
+
 class HomeController extends Controller
 {
     /**
@@ -11,7 +16,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalArtistas = Artista::count();
+        $totalGeneros = Genero::count();
+        $totalAlbuns = Album::count();
+        $totalMusicas = Musica::count();
+
+        return view('home', [
+            'total_artistas' => $totalArtistas,
+            'total_generos' => $totalGeneros,
+            'total_albuns' => $totalAlbuns,
+            'total_musicas' => $totalMusicas,
+        ]);
+
+        
     }
 
     /**

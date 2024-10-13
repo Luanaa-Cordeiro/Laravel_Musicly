@@ -1,4 +1,7 @@
 @extends('master')
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +36,7 @@
                     <a href="{{route('albuns.index')}}">Álbuns</a>
                 </li>
                 <li>
-                    <a href="">Músicas</a>
+                    <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
@@ -67,37 +70,32 @@
                 </div>
             </nav>
 
-<div class="main">
-<div class="formulario">
-<form action="{{ route('albuns.store')}}" method="post">
+<div class="deletar_main">
+   <h1>Música selecionada - {{$musicas->nome}}</h1>
+<form action="{{ route('musicas.destroy', ['musica' => $musicas->id]) }}" method="post">
 @csrf
-  <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="nome_artista" style="color:white;">Nome do Álbum<span class="asterisco">*</span></label>
-    <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" required />
-    <select name="id_artista" id="artista" required>
-    <option disabled selected hidden>Selecione um Artista</option>
-    @foreach($artistas as $artista)
-        <option value="{{ $artista->id}}">{{ $artista->nome }}</option>
-    @endforeach
-</select>
-  </div>
 
-<div id="botao_criar">
-  <button data-mdb-ripple-init type="submit" id="criar" class="btn btn-block">Criar</button>
-  <a href="{{ route('albuns.index')}}">Voltar</a>
-</div>
+    <input type="hidden" name="_method" value="delete">
+    <div class="botoes_deletar">
+    <button type='submit'>Deletar</button><br>
+    <a href="{{ route('musicas.index')}}">Voltar</a>
+    </div>
 </form>
-</div>
-</div>
+</div>    
 
-            
-        </div>
+
+</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 

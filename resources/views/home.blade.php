@@ -78,7 +78,7 @@
             <img src="{{ asset('assets/imagens/microfone-com-fio.png')}}" alt="">
             </div>
             <div class="cartoes">
-            <p>Nossos artistas para curtir!</p>
+            <p>Quantidade: {{ $total_artistas }}</p>
             <a href="{{route('artistas.index')}}"><button>Conferir</button></a>
             </div>
 
@@ -89,7 +89,7 @@
             <img src="{{ asset('assets/imagens/cd.png')}}" alt="">
             </div>
             <div class="cartoes">
-            <p>Os melhores estilos!</p>
+            <p>Quantidade: {{ $total_generos }}</p>
             <a href="{{route('generos.index')}}"><button>Conferir</button></a>
             </div>
 
@@ -100,7 +100,7 @@
             <img src="{{ asset('assets/imagens/album-de-musica.png')}}" alt="">
             </div>
             <div class="cartoes">
-            <p>Álbuns dos nossos artistas disponíveis!</p>
+            <p>Quantidade: {{ $total_albuns }}</p>
             <a href="{{route('albuns.index')}}"><button>Conferir</button></a>
             </div>
 
@@ -111,7 +111,7 @@
             <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
             </div>
             <div class="cartoes">
-            <p>As melhores para se ouvir!</p>
+            <p>Quantidade: {{ $total_musicas }}</p>
             <a href="{{route('musicas.index')}}"><button>Conferir</button></a>
             </div>
             

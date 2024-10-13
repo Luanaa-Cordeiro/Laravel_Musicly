@@ -69,22 +69,34 @@
 
 <div class="main">
 <div class="formulario">
-<form action="{{ route('albuns.store')}}" method="post">
+<form action="{{ route('musicas.store')}}" method="post">
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="nome_artista" style="color:white;">Nome do Álbum<span class="asterisco">*</span></label>
+    <label class="form-label" for="nome_artista" style="color:white;">Nome da Música<span class="asterisco">*</span></label>
     <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" required />
     <select name="id_artista" id="artista" required>
     <option disabled selected hidden>Selecione um Artista</option>
     @foreach($artistas as $artista)
-        <option value="{{ $artista->id}}">{{ $artista->nome }}</option>
+        <option value="{{$artista->id}}">{{ $artista->nome }}</option>
+    @endforeach
+</select>
+<select name="id_genero" id="artista" required>
+    <option disabled selected hidden>Selecione um Gênero</option>
+    @foreach($generos as $genero)
+        <option value="{{$genero->id}}">{{ $genero->nome }}</option>
+    @endforeach
+</select>
+<select name="id_album" id="artista" required>
+    <option disabled selected hidden>Selecione um Álbum</option>
+    @foreach($albuns as $album)
+        <option value="{{$album->id}}">{{ $album->nome }}</option>
     @endforeach
 </select>
   </div>
 
 <div id="botao_criar">
   <button data-mdb-ripple-init type="submit" id="criar" class="btn btn-block">Criar</button>
-  <a href="{{ route('albuns.index')}}">Voltar</a>
+  <a href="{{ route('musicas.index')}}">Voltar</a>
 </div>
 </form>
 </div>

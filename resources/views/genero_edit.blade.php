@@ -82,7 +82,7 @@
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label><br>
-    <input type="text" name="nome" value="{{$generos->nome}}">
+    <input class="form-control" type="text" name="nome" value="{{$generos->nome}}">
     <input type="hidden" name="_method" value="PUT">
   </div>
 

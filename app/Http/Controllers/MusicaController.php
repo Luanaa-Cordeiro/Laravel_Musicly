@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Musica; 
+use App\Models\Album; 
+use App\Models\Genero; 
+use App\Models\Artista; 
+
 
 class MusicaController extends Controller
 {
@@ -37,7 +41,14 @@ class MusicaController extends Controller
      */
     public function create()
     {
-        //
+        $artistas = Artista::all();
+        $albuns = Album::all();
+        $generos = Genero::all();
+        return view('musica_create', [
+            'artistas' => $artistas,
+            'albuns' => $albuns,
+            'generos' => $generos
+        ]);
     }
 
     /**
@@ -45,15 +56,26 @@ class MusicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->musica->create([
+            'nome' => $request->input('nome'), 
+            'id_artista' => $request->input('id_artista'), 
+            'id_genero' => $request->input('id_artista'), 
+            'id_album' => $request->input('id_artista'), 
+        ]);
+
+        if($created){
+           return redirect()->route('musicas.index')->with('message', 'Álbum "' . $created->nome  . '" criado com sucesso');
+        }
+
+        return redirect()->route('musicas.index')->with('message','Erro ao criar');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Musica $musica)
     {
-        //
+        return view('musica_show',['musicas' => $musica]);
     }
 
     /**
@@ -77,6 +99,8 @@ class MusicaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->musica->where('id',$id)->delete();
+
+        return redirect()->route('musicas.index')->with('message','Deletado com sucesso');
     }
 }

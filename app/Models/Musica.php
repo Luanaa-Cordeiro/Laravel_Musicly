@@ -9,6 +9,13 @@ class Musica extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+        'id_artista',
+        'id_genero',
+        'id_album',
+    ];
+
     protected $table = 'musicas';
 
     public function artista()

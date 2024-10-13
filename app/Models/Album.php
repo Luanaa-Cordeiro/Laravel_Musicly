@@ -11,7 +11,7 @@ class Album extends Model
 
     protected $fillable = [
         'nome',
-        'id_artista'
+        'id_artista',
     ];
 
     protected $table = 'albums';
