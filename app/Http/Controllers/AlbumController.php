@@ -1,17 +1,33 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Album; 
 
 class AlbumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public readonly Album $album;
+
+    public function __construct(){
+        $this->album = new Album();
+    }
+
     public function index()
     {
-        //
+
+        $albuns = Album::with('artista')
+        ->select('id', 'nome', 'id_artista')
+        ->get()
+        ->map(function ($album) {
+            return [
+                'id' => $album->id,
+                'nome' => $album->nome,
+                'artista' => $album->artista->nome,
+            ];
+        });
+
+        $album = $this->album->all();
+        return view('albuns',['albuns' => $album]);
     }
 
     /**
@@ -19,7 +35,7 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        //
+        return view('album_create');
     }
 
     /**
@@ -27,7 +43,16 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $created = $this->album->create([
+            'nome' => $request->input('nome'), 
+            'id_artista' => $request->input('id_artista'), 
+        ]);
+
+        if($created){
+           return redirect()->route('artistas.index')->with('message', 'Álbum"' . $created->nome  . '" criado com sucesso');
+        }
+
+        return redirect()->route('artistas.index')->with('message','Erro ao criar');
     }
 
     /**

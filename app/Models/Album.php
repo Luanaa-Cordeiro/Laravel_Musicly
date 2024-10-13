@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Artista extends Model
+class Album extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nome',
+        'id_artista'
     ];
 
-    protected $table = 'artistas';
+    protected $table = 'albums';
 
-    public function albums()
+    public function artista()
     {
-        return $this->hasMany(Album::class, 'id_artista', 'id');
+        return $this->belongsTo(Artista::class, 'id_artista', 'id');
     }
 }
