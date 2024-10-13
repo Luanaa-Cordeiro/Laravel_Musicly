@@ -1,6 +1,5 @@
 @extends('master')
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,8 +51,6 @@
                     </ul>
                 </li>
             </ul>
-
-
         </nav>
 
         <!-- Page Content  -->
@@ -69,52 +66,47 @@
                 </div>
             </nav>
 
-            <h2>Seja Bem-Vindo! Renan</h2>
 
-            <div class="line"></div>
+@if(session()->has('message'))
+    <div class="alerta alert-success alert alert-dismissible">
+        {{ session()->get('message') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
 
-            <div class="cartoes_titulo">
-            <h3>Artistas</h3>
-            <img src="{{ asset('assets/imagens/microfone-com-fio.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Nossos artistas para curtir!</p>
-            <a href="{{route('artistas.index')}}"><button>Conferir</button></a>
-            </div>
+<div class='adicionar'>
+    <h2>Artistas</h2>
+    <a href="{{route('musicas.create')}}"><button>Adicionar</button></a>
+</div>
 
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Gêneros</h3>
-            <img src="{{ asset('assets/imagens/cd.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Os melhores estilos!</p>
-            <a href="{{route('generos.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Álbuns</h3>
-            <img src="{{ asset('assets/imagens/album-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>Álbuns dos nossos artistas disponíveis!</p>
-            <a href="{{route('albuns.index')}}"><button>Conferir</button></a>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="cartoes_titulo">
-            <h3>Músicas</h3>
-            <img src="{{ asset('assets/imagens/reprodutor-de-musica.png')}}" alt="">
-            </div>
-            <div class="cartoes">
-            <p>As melhores para se ouvir!</p>
-            <a href="{{route('musicas.index')}}"><button>Conferir</button></a>
-            </div>
-            
+<div class="table-wrapper">
+                <table class="table table-responsive table-striped table-hover">
+                  <thead class="">
+                    <tr>
+                      <th style="background-color:#6d7fcc; color:white;">Id</th>
+                      <th style="background-color:#6d7fcc; color:white;">Nome</th>
+                      <th style="background-color:#6d7fcc; color:white;">Artista</th>
+                      <th style="background-color:#6d7fcc; color:white;">Álbum</th>
+                      <th style="background-color:#6d7fcc; color:white;">Gênero</th>
+                      <th style="background-color:#6d7fcc; color:white;" id='ação'>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+    @foreach($musicas as $musica)
+    <tr>
+        <td>{{$musica->id}}</td>
+        <td>{{$musica->nome}}</td>
+        <td>{{$musica->artista->nome}}</td>
+        <td>{{$musica->album->nome}}</td>
+        <td>{{$musica->genero->nome}}</td>
+        <td id='botões'>
+            <button id="editar"><a href="{{ route('musicas.edit', ['musica' => $musica->id]) }}">Editar</a></button>
+            <button id="deletar"><a href="{{route('musicas.show',['musica' => $musica->id])}}">Mostrar</a></button>
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+        </table>
         </div>
     </div>
 
@@ -122,5 +114,12 @@
     <script src="{{ asset('assets/js/script.js')}}"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 

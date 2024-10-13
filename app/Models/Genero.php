@@ -12,4 +12,6 @@ class Genero extends Model
     protected $fillable = [
         'nome',
     ];
+
+    protected $table = 'generos';
 }

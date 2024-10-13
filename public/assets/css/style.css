@@ -69,6 +69,43 @@ a:focus {
     background-color: transparent;
 }
 
+
+.cartoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.cartoes button{
+    background-color: #6d7fcc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 8px 16px;
+    margin: 0px 2px;
+}
+
+.cartoes button:hover{
+    background-color: #20368d;
+    
+}
+
+.cartoes_titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.cartoes_titulo img{
+    width: 20px;
+height: 20px;
+margin-left: 10px;
+    
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -191,6 +228,10 @@ a.article:hover {
     margin: 0px 2px;
 }
 
+.adicionar button:hover{
+    background-color: #20368d
+}
+
 #deletar{
     background-color: rgb(177, 165, 5);
     color: white;
@@ -201,6 +242,11 @@ a.article:hover {
     margin: 0px 2px;
 }
 
+
+#deletar:hover{
+    background-color: rgb(117, 110, 3);
+}
+
 #editar{
     background-color: rgb(3, 66, 1);
     color: white;
@@ -209,6 +255,10 @@ a.article:hover {
     font-size: 15px;
     padding: 5px 10px;
     margin: 0px 5px;
+}
+
+#editar:hover{
+    background-color: rgb(1, 31, 0);
 }
 
 #ação{
@@ -321,6 +371,10 @@ a.article:hover {
     color: white;
     background-color: rgb(114, 5, 5);
     margin-bottom: 15px;
+}
+
+.botoes_deletar button:hover{
+    background-color: rgb(54, 2, 2);
 }
 
 .botoes_deletar a{

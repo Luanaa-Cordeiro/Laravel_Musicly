@@ -80,6 +80,6 @@ class ArtistaController extends Controller
     {
         $this->artista->where('id',$id)->delete();
 
-       return redirect()->route('artistas.index');
+       return redirect()->route('artistas.index')->with('message','Deletado com sucesso');
     }
 }
