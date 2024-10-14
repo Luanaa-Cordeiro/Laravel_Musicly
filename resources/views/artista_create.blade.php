@@ -67,13 +67,23 @@
                 </div>
             </nav>
 
+@if($errors->any())
+    @foreach($errors->all() as $error)
+    <div class="alerta alert-danger alert alert-dismissible">
+        {{$error}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    @endforeach
+@endif
+
+
 <div class="main">
 <div class="formulario">
 <form action="{{ route('artistas.store')}}" method="post">
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="nome_artista" style="color:white;">Nome do Artista<span class="asterisco">*</span></label>
-    <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" required />
+    <input value='{{old("nome")}}' type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" />
   </div>
 
 <div id="botao_criar">

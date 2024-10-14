@@ -33,7 +33,7 @@
                     <a href="{{route('albuns.index')}}">Álbuns</a>
                 </li>
                 <li>
-                    <a href="">Músicas</a>
+                    <a href="{{route('musicas.index')}}">Músicas</a>
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Relatórios</a>
@@ -67,14 +67,22 @@
                 </div>
             </nav>
 
+@if($errors->any())
+<div class="alerta alert-danger alert alert-dismissible">
+        {{$errors->first() }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
+
+
 <div class="main">
 <div class="formulario">
 <form action="{{ route('albuns.store')}}" method="post">
 @csrf
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="nome_artista" style="color:white;">Nome do Álbum<span class="asterisco">*</span></label>
-    <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome" required />
-    <select name="id_artista" id="artista" required>
+    <input type="text" id="form1Example2" class="form-control" name="nome" placeholder="Nome"/>
+    <select name="id_artista" id="artista">
     <option disabled selected hidden>Selecione um Artista</option>
     @foreach($artistas as $artista)
         <option value="{{ $artista->id}}">{{ $artista->nome }}</option>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Album; 
 use App\Models\Artista; 
-
+use App\Http\Requests\StoreAlbum;
 
 class AlbumController extends Controller
 {
@@ -44,7 +44,7 @@ class AlbumController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAlbum $request)
     {
         $created = $this->album->create([
             'nome' => $request->input('nome'), 

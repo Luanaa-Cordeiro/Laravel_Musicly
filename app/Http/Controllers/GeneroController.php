@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Genero; 
+use App\Http\Requests\StoreRequest;
 
 class GeneroController extends Controller
 {
@@ -30,7 +31,7 @@ class GeneroController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $created = $this->genero->create([
             'nome' => $request->input('nome'), 

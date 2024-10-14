@@ -6,6 +6,7 @@ use App\Models\Musica;
 use App\Models\Album; 
 use App\Models\Genero; 
 use App\Models\Artista; 
+use App\Http\Requests\StoreMusica;
 
 
 class MusicaController extends Controller
@@ -54,13 +55,13 @@ class MusicaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreMusica $request)
     {
         $created = $this->musica->create([
             'nome' => $request->input('nome'), 
             'id_artista' => $request->input('id_artista'), 
-            'id_genero' => $request->input('id_artista'), 
-            'id_album' => $request->input('id_artista'), 
+            'id_genero' => $request->input('id_genero'), 
+            'id_album' => $request->input('id_album'), 
         ]);
 
         if($created){

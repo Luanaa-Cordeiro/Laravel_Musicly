@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artista; 
+use App\Http\Requests\StoreRequest;
 
 class ArtistaController extends Controller
 {
@@ -30,7 +31,7 @@ class ArtistaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $created = $this->artista->create([
              'nome' => $request->input('nome'), 
